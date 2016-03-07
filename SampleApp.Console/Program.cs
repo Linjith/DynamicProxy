@@ -1,5 +1,6 @@
 ﻿using SampleApp.Core.IoC;
 using SampleApp.Core.Interfaces;
+using System;
 
 namespace SampleApp.Console
 {
@@ -14,8 +15,14 @@ namespace SampleApp.Console
             var rocket = DependencyResolver.For<IRocket>();
 
             //method call
-            rocket.Launch(10);
+            try
+            {
+                rocket.Launch(2);
+            }
+            catch (Exception ex)
+            {
 
+            }
             System.Console.ReadKey();
            
         }
